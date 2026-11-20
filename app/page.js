@@ -1,4 +1,5 @@
-import { ArrowDown, ArrowRight, ArrowUpRight, Check, ClipboardList, Globe, LayoutDashboard, Monitor, Workflow } from 'lucide-react'
+import { ArrowUpRight, Check, ClipboardList, Globe, LayoutDashboard, Monitor, Workflow } from 'lucide-react'
+import Hero from './hero'
 import Tools from './tools'
 
 const services = [
@@ -28,16 +29,7 @@ export default function Home() {
       <a className="button navButton" href="#contact">문의하기 <ArrowUpRight size={16}/></a>
     </div></header>
     <main>
-      <section className="hero"><div className="wrap heroGrid">
-        <div><p className="eyebrow">웹사이트 · 관리자 · 업무 시스템</p>
-        <h1>홈페이지와<br/>기업의 업무를<br/><em>함께 개선합니다.</em></h1>
-        <p className="intro">중소기업에 필요한 홈페이지부터 문의 관리와 반복 업무 시스템까지, 지금 필요한 범위부터 설계합니다.</p>
-        <div className="actions"><a className="button primary" href="#contact">프로젝트 문의 <ArrowUpRight size={18}/></a><a className="button outline" href="#portfolio">포트폴리오 <ArrowDown size={16}/></a></div></div>
-        <div className="visual"><div className="window">
-          <div className="windowBar"><span><Globe size={15}/> 고객 홈페이지</span><span className="dots"><i/><i/><i/></span></div>
-          <div className="windowBody"><div className="miniLine"/><div className="miniTitle"/><div className="miniText"/><div className="miniText short"/><span className="miniButton">프로젝트 문의 <ArrowRight size={13}/></span></div>
-        </div><div className="adminCard"><span className="adminIcon"><LayoutDashboard size={21}/></span><div><strong>문의 관리</strong><small>접수 → 담당자 확인 → 견적</small></div><Check size={17}/></div></div>
-      </div></section>
+      <Hero/>
       <section className="wrap section" id="services">
         <p className="label">서비스</p><h2>홈페이지부터 업무 시스템까지</h2>
         <p className="sectionIntro">고객이 서비스를 찾고 문의하는 순간부터 담당자가 상담을 처리하는 흐름까지 살펴봅니다.</p>
