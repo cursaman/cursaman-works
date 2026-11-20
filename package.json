@@ -1,0 +1,16 @@
+{
+  "name": "cursaman-works",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
+  },
+  "private": true,
+  "dependencies": {
+    "lucide-react": "^1.77.0",
+    "next": "^16.4.6",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1"
+  }
+}
