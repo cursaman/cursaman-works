@@ -136,6 +136,16 @@ fieldset, select, textarea, .result { border: 1px solid var(--line); border-radi
 .education { background: #eaf3ef; }
 .classList li { display: grid; gap: 4px; padding: 15px 0; border-bottom: 1px solid #c7dad0; }
 .classList span { color: var(--muted); font-size: 14px; }
+.about { background: var(--ivory); }
+.aboutGrid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(28px, 6vw, 76px); }
+.careerProjects { padding-left: 20px; color: var(--muted); }
+.careerTimeline { list-style: none; margin: 0; padding: 0 0 0 20px; border-left: 1px solid #9ebcb6; }
+.careerTimeline li { position: relative; margin-bottom: 18px; }
+.careerTimeline li:last-child, .careerTimeline p { margin-bottom: 0; }
+.careerTimeline li::before { content: ""; position: absolute; left: -24px; top: 8px; width: 7px; height: 7px; border-radius: 50%; background: var(--teal); }
+.careerTimeline span { color: var(--teal); font-size: 13px; font-weight: 750; }
+.careerTimeline h3 { margin: 3px 0 5px; font-size: 18px; }
+.careerTimeline p { font-size: 14px; }
 .steps { grid-template-columns: repeat(4, minmax(0, 1fr)); padding-left: 22px; gap: 24px; }
 .steps li { padding-top: 13px; border-top: 1px solid var(--line); }
 .steps li::marker { color: var(--teal); font-weight: 850; }
@@ -152,7 +162,7 @@ footer { padding-block: 30px; border-top: 1px solid var(--line); }
 @media (max-width: 850px) {
   .nav { flex-wrap: wrap; padding-block: 12px; gap: 12px; }
   .nav nav { order: 3; width: 100%; }
-  .educationGrid, .tools { grid-template-columns: 1fr; }
+  .educationGrid, .tools, .aboutGrid { grid-template-columns: 1fr; }
   .cards { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .steps { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }

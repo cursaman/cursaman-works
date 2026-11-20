@@ -23,11 +23,18 @@ const steps = [
   ['검수·운영', '기능을 확인하고 배포와 운영을 지원합니다.'],
 ]
 
+const career = [
+  ['2001.03–2003.08', '동의대학교 대학원', '네트워크를 전공하고 컴퓨터공학을 부전공했습니다. 전산·웹·인터넷 방송 시스템 운영에 참여하고, 광고 웹사이트 설계와 구현을 주제로 석사 연구를 진행했습니다.'],
+  ['2004.10–2005.12', '자이언유비컴', '서버 장비 영업과 설치, 고객사 기술지원을 맡았습니다.'],
+  ['2006.04–2025.11', '엠투소프트', '고객 요구사항에 맞춰 출력 솔루션을 개발하고, 운영 중 발생한 장애 대응과 장기 유지보수를 담당했습니다.'],
+  ['2026.03–2026.09', 'SBS 프런트엔드 과정', 'HTML·CSS·JavaScript와 React를 바탕으로 웹 화면 구현과 UI 설계 역량을 확장했습니다.'],
+]
+
 export default function Home() {
   return <>
     <header id="top"><div className="wrap nav">
       <a className="brand" href="#top"><span>CW</span>커사맨웍스</a>
-      <nav aria-label="주 메뉴"><a href="#services">서비스</a><a href="#health">홈페이지 진단</a><a href="#portfolio">포트폴리오</a><a href="#education">AI 제작교육</a></nav>
+      <nav aria-label="주 메뉴"><a href="#services">서비스</a><a href="#health">홈페이지 진단</a><a href="#portfolio">포트폴리오</a><a href="#education">AI 제작교육</a><a href="#about">이력 소개</a></nav>
       <div className="navActions">
         <a className="navPhone" href="tel:01028697095"><Phone size={15} aria-hidden="true"/> 010-2869-7095</a>
         <a className="button navButton" href="#contact">문의하기 <ArrowUpRight size={16}/></a>
@@ -49,6 +56,16 @@ export default function Home() {
       </section>
       <section className="education" id="education"><div className="wrap section educationGrid"><div><p className="label">AI 제작교육</p><h2>내 사업의 홈페이지를<br/>직접 완성합니다</h2><p>실무자와 자영업자가 자신의 사업을 주제로 AI를 활용해 홈페이지와 홍보영상을 만드는 실습 과정입니다.</p><a className="button primary" href={`mailto:${contactEmail}?subject=${encodeURIComponent('AI 교육 문의')}`}>교육 문의 <ArrowUpRight size={16}/></a></div>
       <ul className="classList"><li><strong>3시간 체험반</strong><span>한 페이지 홈페이지 또는 짧은 홍보영상</span></li><li><strong>4주 완성반</strong><span>반응형 홈페이지 제작 또는 영상 콘텐츠 기획</span></li><li><strong>기업·기관 출강</strong><span>참가자와 업무 목표에 맞는 실습</span></li></ul></div></section>
+      <section className="about" id="about"><div className="wrap section aboutGrid">
+        <div>
+          <p className="label">이력 소개</p><h2>이종춘</h2>
+          <p>20년 이상 IT 실무에서 고객 요구사항 분석, 솔루션 개발, 기술지원과 운영을 경험했습니다. 이 경험을 바탕으로 기업 홈페이지와 업무 시스템을 설계하고, 웹 제작과 생성형 AI를 연결한 실습 교육을 기획합니다.</p>
+          <h3>주요 수행 프로젝트</h3>
+          <ul className="careerProjects"><li>국민연금공단 차세대 출력시스템 양식 개발과 테스트</li><li>신한은행 출력 프로그램 개발과 운영 지원</li><li>삼성물산 기술지원, 현대백화점 양식 개발, CJ 계열사 유지보수</li></ul>
+          <a className="button" href="https://cursamanworks.kr/my/">상세 이력 보기 <ArrowUpRight size={16}/></a>
+        </div>
+        <ol className="careerTimeline">{career.map(([period, organization, description]) => <li key={period}><span>{period}</span><h3>{organization}</h3><p>{description}</p></li>)}</ol>
+      </div></section>
       <section className="wrap section"><p className="label">진행 방식</p><h2>상담부터 배포까지</h2><ol className="steps">{steps.map(([title, description]) => <li key={title}><h3>{title}</h3><p>{description}</p></li>)}</ol></section>
       <Tools kind="contact" email={contactEmail}/>
     </main>
