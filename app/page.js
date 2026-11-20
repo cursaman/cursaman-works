@@ -1,4 +1,4 @@
-import { ArrowUpRight, Check, ClipboardList, Globe, LayoutDashboard, Monitor, Workflow } from 'lucide-react'
+import { ArrowUpRight, Check, ClipboardList, Globe, LayoutDashboard, Monitor, Phone, Workflow } from 'lucide-react'
 import Hero from './hero'
 import Tools from './tools'
 
@@ -26,7 +26,10 @@ export default function Home() {
     <header id="top"><div className="wrap nav">
       <a className="brand" href="#top"><span>CW</span>커사맨웍스</a>
       <nav aria-label="주 메뉴"><a href="#services">서비스</a><a href="#health">홈페이지 진단</a><a href="#portfolio">포트폴리오</a><a href="#education">AI 제작교육</a></nav>
-      <a className="button navButton" href="#contact">문의하기 <ArrowUpRight size={16}/></a>
+      <div className="navActions">
+        <a className="navPhone" href="tel:01028697095"><Phone size={15} aria-hidden="true"/> 010-2869-7095</a>
+        <a className="button navButton" href="#contact">문의하기 <ArrowUpRight size={16}/></a>
+      </div>
     </div></header>
     <main>
       <Hero/>
