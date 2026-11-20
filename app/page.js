@@ -1,38 +1,60 @@
-import { ArrowUpRight, ArrowRight, Activity, Monitor, Layers, Sparkles, Check, Globe } from 'lucide-react'
+import { ArrowDown, ArrowRight, ArrowUpRight, Check, ClipboardList, Globe, LayoutDashboard, Monitor, Workflow } from 'lucide-react'
 import Tools from './tools'
 
 const services = [
-  { icon: Activity, title: '홈페이지 진단', text: '모바일 화면, 문의 동선, 로딩, 검색 노출을 점검하고 개선할 순서를 정합니다.', price: '간편검진 무료 · 기술진단 15만 원부터', href: '#health' },
-  { icon: Layers, title: '제작·개선·운영', text: '작은 오류 수정부터 리뉴얼과 견적·주문 시스템 구축까지, 필요한 범위부터 시작합니다.', price: '부분개선 49만 원부터', href: '#contact' },
-  { icon: Sparkles, title: 'AI 실무교육', text: '내 사업을 주제로 홈페이지와 홍보영상을 만들고 직접 운영하는 방법을 익힙니다.', price: '체험반 · 정규과정 · 기관 출강', href: '#education' },
+  { icon: Monitor, title: '기업 홈페이지', description: '서비스와 강점을 고객이 빠르게 이해하도록 정보를 정리하고, 화면 크기에 맞춰 제작합니다.', features: ['정보 구조와 콘텐츠 설계', 'PC·태블릿·모바일 대응', '검색·접근성 기본 설정'] },
+  { icon: LayoutDashboard, title: '홈페이지 + 관리자', description: '문의와 콘텐츠를 한곳에서 확인하고, 담당자가 직접 운영할 수 있는 환경을 만듭니다.', features: ['문의 접수와 상태 관리', '콘텐츠·포트폴리오 관리', '담당자 권한 설계'] },
+  { icon: Workflow, title: '맞춤형 업무 시스템', description: '전화·메신저·엑셀에 흩어진 업무를 살펴보고 반복되는 단계부터 연결합니다.', features: ['현재 업무 흐름 분석', '견적·신청·진행 상태 관리', '단계별 도입과 운영 지원'] },
+]
+
+const projects = [
+  { title: '기업 홈페이지 프로젝트', description: '기업 소개와 서비스 정보를 고객이 찾기 쉬운 순서로 구성했습니다.', href: 'https://cursamanworks.kr/biz/', icon: Monitor, theme: 'web' },
+  { title: '홈페이지 진단 프로젝트', description: '사이트의 상태를 항목별로 확인하고 개선 방향을 안내하는 프로젝트입니다.', href: 'https://cursamanworks.kr/health/', icon: ClipboardList, theme: 'audit' },
+  { title: '동부산CC UX/UI 제안', description: '골프장 방문 경험을 중심으로 구성한 비공식 웹사이트 리뉴얼 제안입니다.', href: 'https://cursamanworks.kr/dongbusan/', icon: Globe, theme: 'concept' },
+]
+
+const steps = [
+  ['상담', '현재 상황과 목표를 확인합니다.'],
+  ['범위 확정', '우선순위와 완료 기준을 정합니다.'],
+  ['설계·제작', '화면과 업무 기능을 연결합니다.'],
+  ['검수·운영', '기능을 확인하고 배포와 운영을 지원합니다.'],
 ]
 
 export default function Home() {
   return <>
-    <header><div className="wrap nav">
-      <a className="brand" href="#" aria-label="커사맨웍스 홈"><span><Activity size={21}/></span>커사맨웍스</a>
-      <nav aria-label="주 메뉴"><a href="#services">서비스</a><a href="#education">AI 실무교육</a><a href="#health">홈페이지 검진</a></nav>
-      <a className="button navButton" href="#contact">상담 준비 <ArrowUpRight size={15}/></a>
+    <header id="top"><div className="wrap nav">
+      <a className="brand" href="#top"><span>CW</span>커사맨웍스</a>
+      <nav aria-label="주 메뉴"><a href="#services">서비스</a><a href="#health">홈페이지 진단</a><a href="#portfolio">포트폴리오</a><a href="#education">AI 제작교육</a></nav>
+      <a className="button navButton" href="#contact">문의하기 <ArrowUpRight size={16}/></a>
     </div></header>
     <main>
       <section className="hero"><div className="wrap heroGrid">
-        <div><p className="eyebrow"><span/> 웹 제작 · 운영 개선 · AI 실무교육</p>
-        <h1>홈페이지를<br/>사업에 연결합니다<span>.</span></h1>
-        <p className="intro">기존 홈페이지의 문제를 찾아 개선하고, 문의·견적·주문이 이어지는 고객 경험을 만듭니다.</p>
-        <div className="actions"><a className="button primary" href="#health">무료 간편검진 <ArrowRight size={18}/></a><a className="button" href="#services">서비스 살펴보기</a></div></div>
-        <div className="visual">
-          <div className="window"><div className="windowBar"><div className="dots"><i/><i/><i/></div><span><Globe size={13}/> 홈페이지 개선 예시</span><Monitor size={16}/></div>
-          <div className="windowBody"><p>홈페이지 개선 흐름</p><strong>방문에서 문의까지</strong>
-          <div className="flow"><div><Globe size={19}/> 방문</div><ArrowRight size={16}/><div><Layers size={19}/> 서비스 확인</div><ArrowRight size={16}/><div><Check size={19}/> 문의</div></div>
-          <div className="metric"><span><Check size={15}/> 모바일 화면 정리</span><span><Check size={15}/> 문의 동선 개선</span></div></div></div>
-        </div>
+        <div><p className="eyebrow">웹사이트 · 관리자 · 업무 시스템</p>
+        <h1>홈페이지와<br/>기업의 업무를<br/><em>함께 개선합니다.</em></h1>
+        <p className="intro">중소기업에 필요한 홈페이지부터 문의 관리와 반복 업무 시스템까지, 지금 필요한 범위부터 설계합니다.</p>
+        <div className="actions"><a className="button primary" href="#contact">프로젝트 문의 <ArrowUpRight size={18}/></a><a className="button outline" href="#portfolio">포트폴리오 <ArrowDown size={16}/></a></div></div>
+        <div className="visual"><div className="window">
+          <div className="windowBar"><span><Globe size={15}/> 고객 홈페이지</span><span className="dots"><i/><i/><i/></span></div>
+          <div className="windowBody"><div className="miniLine"/><div className="miniTitle"/><div className="miniText"/><div className="miniText short"/><span className="miniButton">프로젝트 문의 <ArrowRight size={13}/></span></div>
+        </div><div className="adminCard"><span className="adminIcon"><LayoutDashboard size={21}/></span><div><strong>문의 관리</strong><small>접수 → 담당자 확인 → 견적</small></div><Check size={17}/></div></div>
       </div></section>
-      <section className="wrap section" id="services"><p className="label">서비스</p><h2>필요한 부분부터 개선하세요</h2><div className="cards">
-      {services.map(({icon:Icon,title,text,price,href}) => <article key={title}><div className="icon"><Icon size={24}/></div><h3>{title}</h3><p>{text}</p><a href={href}>{price} <ArrowUpRight size={16}/></a></article>)}
-      </div></section>
-      <section className="education" id="education"><div className="wrap section"><p className="label">AI 실무교육</p><h2>내 사업의 홈페이지와 영상을 직접 만듭니다</h2><p>실무자와 자영업자를 위한 3시간 체험반, 4주 완성반, 기업·기관 출강을 준비합니다.</p><a className="button" href="#contact">교육 상담 준비 <ArrowUpRight size={16}/></a></div></section>
-      <Tools email={process.env.CONTACT_EMAIL || ''}/>
+      <section className="wrap section" id="services">
+        <p className="label">서비스</p><h2>홈페이지부터 업무 시스템까지</h2>
+        <p className="sectionIntro">고객이 서비스를 찾고 문의하는 순간부터 담당자가 상담을 처리하는 흐름까지 살펴봅니다.</p>
+        <div className="cards">{services.map(({ icon: Icon, title, description, features }) => <article key={title}><div className="icon"><Icon size={23}/></div><h3>{title}</h3><p>{description}</p><ul>{features.map(feature => <li key={feature}><Check size={15}/> {feature}</li>)}</ul><a href="#contact">제작 문의 <ArrowUpRight size={16}/></a></article>)}</div>
+      </section>
+      <Tools kind="health"/>
+      <section className="wrap section" id="portfolio">
+        <p className="label">포트폴리오</p><h2>프로젝트로 보는 해결 과정</h2>
+        <div className="cards projects">{projects.map(({ icon: Icon, title, description, href, theme }) => <article key={title}>
+          <a href={href} className="project"><div className={`projectArt ${theme}`}><Icon size={42} strokeWidth={1.35}/></div><div className="projectText"><h3>{title}</h3><p>{description}</p><span>프로젝트 보기 <ArrowUpRight size={16}/></span></div></a>
+        </article>)}</div>
+      </section>
+      <section className="education" id="education"><div className="wrap section educationGrid"><div><p className="label">AI 제작교육</p><h2>내 사업의 홈페이지를<br/>직접 완성합니다</h2><p>실무자와 자영업자가 자신의 사업을 주제로 AI를 활용해 홈페이지와 홍보영상을 만드는 실습 과정입니다.</p><a className="button primary" href="mailto:contact@cursamanworks.kr?subject=AI%20교육%20문의">교육 문의 <ArrowUpRight size={16}/></a></div>
+      <ul className="classList"><li><strong>3시간 체험반</strong><span>한 페이지 홈페이지 또는 짧은 홍보영상</span></li><li><strong>4주 완성반</strong><span>반응형 홈페이지 제작 또는 영상 콘텐츠 기획</span></li><li><strong>기업·기관 출강</strong><span>참가자와 업무 목표에 맞는 실습</span></li></ul></div></section>
+      <section className="wrap section"><p className="label">진행 방식</p><h2>상담부터 배포까지</h2><ol className="steps">{steps.map(([title, description]) => <li key={title}><h3>{title}</h3><p>{description}</p></li>)}</ol></section>
+      <Tools kind="contact" email={process.env.CONTACT_EMAIL || 'estimate@cursamanworks.kr'}/>
     </main>
-    <footer><div className="wrap">커사맨웍스 <span>Cursaman Works</span></div></footer>
+    <footer><div className="wrap footer"><div><a className="brand" href="#top"><span>CW</span>커사맨웍스</a><p>중소기업의 홈페이지와 반복 업무를 개선하는 웹 제작 파트너</p></div><div className="footerLinks"><a href="mailto:contact@cursamanworks.kr">일반·교육 문의</a><a href="mailto:support@cursamanworks.kr">유지보수 문의</a><a href="https://cursamanworks.kr/privacy/">개인정보처리방침</a></div></div></footer>
   </>
 }
